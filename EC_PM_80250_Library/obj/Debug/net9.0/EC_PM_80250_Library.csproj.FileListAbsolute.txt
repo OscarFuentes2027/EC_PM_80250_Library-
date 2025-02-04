@@ -1,0 +1,12 @@
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.csproj.AssemblyReference.cache
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.AssemblyInfoInputs.cache
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.AssemblyInfo.cs
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.csproj.CoreCompileInputs.cache
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\bin\Debug\net9.0\EC_PM_80250_Library.deps.json
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\bin\Debug\net9.0\EC_PM_80250_Library.dll
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\bin\Debug\net9.0\EC_PM_80250_Library.pdb
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.dll
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\refint\EC_PM_80250_Library.dll
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.pdb
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\ref\EC_PM_80250_Library.dll
