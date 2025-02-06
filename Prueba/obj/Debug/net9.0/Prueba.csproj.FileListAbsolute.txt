@@ -40,3 +40,4 @@ C:\Users\ofuentes\source\repos\EC_PM_80250_Library\Prueba\bin\Debug\net9.0\EC_PM
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\Prueba\bin\Debug\net9.0\EC_PM_80250_Library.pdb
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\Prueba\obj\Debug\net9.0\Prueba.csproj.AssemblyReference.cache
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\Prueba\obj\Debug\net9.0\Prueba.csproj.Up2Date
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\Prueba\obj\Debug\net9.0\Prueba.sourcelink.json
