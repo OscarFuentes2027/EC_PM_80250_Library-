@@ -152,7 +152,6 @@ namespace EC_PM_80250_Library
             return resizedImage;
         }
 
-        // Método para convertir una imagen a 1bpp sin usar Graphics.FromImage()
         public static Bitmap ConvertTo1Bpp(Bitmap img)
         {
             int width = img.Width;
@@ -203,13 +202,6 @@ namespace EC_PM_80250_Library
 
             return bmp;
         }
-
-
-
-
-
-
-
 
         public static int GetImageWidth(string imagePath)
         {

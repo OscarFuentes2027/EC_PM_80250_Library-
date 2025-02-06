@@ -10,3 +10,4 @@ C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\refint\EC_PM_80250_Library.dll
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.pdb
 C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\ref\EC_PM_80250_Library.dll
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\EC_PM_80250_Library\obj\Debug\net9.0\EC_PM_80250_Library.sourcelink.json
