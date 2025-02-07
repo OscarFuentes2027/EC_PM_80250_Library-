@@ -89,7 +89,12 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 PrinterStatus status = CheckPrinterStatus();
                 if (status != PrinterStatus.Normal) return status;
@@ -161,7 +166,16 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Warn("La impresora no está conectada. Intentando conectar...");
+                    var connectionStatus = OpenConnection();
+                    if (connectionStatus != PrinterStatus.Normal)
+                    {
+                        logger.Error("No se pudo conectar a la impresora.");
+                        return PrinterStatus.NotOpen;
+                    }
+                }
 
                 logger.Info($"Imprimiendo texto: '{text}' con opciones [{string.Join(", ", options)}]");
 
@@ -233,11 +247,17 @@ namespace EC_PM_80250_Library
 
 
 
+
         public PrinterStatus PrintBarcode(string data)
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 List<byte> commandBuffer = new List<byte>();
 
@@ -277,7 +297,12 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 // Convertir el objeto JSON en string
                 string jsonString = JsonSerializer.Serialize(jsonData);
@@ -323,7 +348,12 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 logger.Info($"Cargando imagen desde: {imagePath}");
 
@@ -419,7 +449,12 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 byte[] resetCommand = { 0x1B, 0x40 }; // Comando ESC/POS para reiniciar la impresora
                 _connection.SendData(resetCommand);
@@ -440,7 +475,12 @@ namespace EC_PM_80250_Library
         {
             try
             {
-                if (IsConnected() != PrinterStatus.Normal) OpenConnection();
+                if (IsConnected() != PrinterStatus.Normal)
+                {
+                    logger.Error("Error: La impresora no está conectada.");
+                    return PrinterStatus.NotOpen;
+                }
+
 
                 byte[] cutCommand = { 0x1D, 0x56, 0x00 }; // Comando ESC/POS para corte de papel
                 _connection.SendData(cutCommand);
