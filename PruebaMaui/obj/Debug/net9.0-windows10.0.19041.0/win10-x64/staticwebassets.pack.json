@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ofuentes\\source\\repos\\EC_PM_80250_Library\\PruebaMaui\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\PruebaMaui.styles.css",
+      "PackagePath": "staticwebassets\\PruebaMaui.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\ofuentes\\source\\repos\\EC_PM_80250_Library\\PruebaMaui\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\ofuentes\\source\\repos\\EC_PM_80250_Library\\PruebaMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ofuentes\\source\\repos\\EC_PM_80250_Library\\PruebaMaui\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ofuentes\\source\\repos\\EC_PM_80250_Library\\PruebaMaui\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.PruebaMaui.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.PruebaMaui.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.build.PruebaMaui.props",
+      "PackagePath": "build\\PruebaMaui.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildMultiTargeting.PruebaMaui.props",
+      "PackagePath": "buildMultiTargeting\\PruebaMaui.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildTransitive.PruebaMaui.props",
+      "PackagePath": "buildTransitive\\PruebaMaui.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

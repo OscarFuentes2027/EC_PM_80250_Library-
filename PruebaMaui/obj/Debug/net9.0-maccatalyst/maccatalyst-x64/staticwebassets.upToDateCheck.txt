@@ -1,0 +1,8 @@
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\PruebaMaui\wwwroot\css\bootstrap\bootstrap.min.css.map
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\PruebaMaui\wwwroot\css\app.css
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\PruebaMaui\wwwroot\index.html
+C:\Users\ofuentes\source\repos\EC_PM_80250_Library\PruebaMaui\wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\app.css
+wwwroot\css\bootstrap\bootstrap.min.css
+wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\index.html

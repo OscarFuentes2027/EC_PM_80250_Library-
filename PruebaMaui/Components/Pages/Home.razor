@@ -1,0 +1,166 @@
+﻿@page "/"
+@using EC_PM_80250_Library;
+@using System.Text;
+
+<h3>Prueba de Impresora</h3>
+
+<div>
+    <label>IP de la Impresora:</label>
+    <input @bind="IpAddress" placeholder="Ej: 192.168.123.100" />
+</div>
+
+<div>
+    <label>Puerto TCP:</label>
+    <input @bind="Port" type="number" placeholder="Ej: 9100" />
+</div>
+
+<div>
+    <label>Puerto Serial:</label>
+    <input @bind="SerialPort" placeholder="Ej: COM6 o /dev/ttyUSB0" />
+</div>
+
+<div>
+    <label>BaudRate:</label>
+    <input @bind="BaudRate" type="number" placeholder="Ej: 19200" />
+</div>
+
+<button @onclick="ConnectEthernet">Conectar por Ethernet</button>
+<button @onclick="ConnectSerial">Conectar por Serial USB</button>
+<button @onclick="TestPrintConstructor">Enviar Texto de Prueba</button>
+<button @onclick="CloseConnection">Cerrar conexión</button>
+
+<p>@StatusMessage</p>
+
+@code {
+    private string IpAddress = "192.168.123.100";
+    private int Port = 9100;
+#if WINDOWS
+    private string SerialPort = "COM6";
+#else
+    private string SerialPort = "/dev/ttyUSB0";
+#endif
+    private int BaudRate = 19200;
+
+    private string StatusMessage = "Esperando conexión...";
+    private PrinterConnectionManager _connection;
+    private EC_PM_80250 _printer;
+    private bool _isConnected = false;
+
+    private void ConnectEthernet()
+    {
+        try
+        {
+            if (_isConnected)
+            {
+                StatusMessage = "⚠️ Ya hay una conexión activa.";
+                return;
+            }
+
+            _connection = new PrinterConnectionManager(IpAddress, Port);
+            _printer = new EC_PM_80250(IpAddress, Port);
+            var status = _printer.OpenConnection();
+
+            if (status == PrinterStatus.Normal)
+            {
+                _isConnected = true;
+                StatusMessage = "✅ Conexión Ethernet establecida.";
+            }
+            else
+            {
+                StatusMessage = $"❌ Error al conectar: {status}";
+            }
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"❌ Error: {ex.Message}";
+        }
+    }
+
+    private void ConnectSerial()
+    {
+        try
+        {
+            if (_isConnected)
+            {
+                StatusMessage = "⚠️ Ya hay una conexión activa.";
+                return;
+            }
+
+            _connection = new PrinterConnectionManager(SerialPort, BaudRate);
+            _printer = new EC_PM_80250(SerialPort, BaudRate);
+            var status = _printer.OpenConnection();
+
+            if (status == PrinterStatus.Normal)
+            {
+                _isConnected = true;
+                StatusMessage = "✅ Conexión Serial establecida.";
+            }
+            else
+            {
+                StatusMessage = $"❌ Error al conectar: {status}";
+            }
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"❌ Error: {ex.Message}";
+        }
+    }
+
+    private void TestPrintConstructor()
+    {
+        try
+        {
+            if (!_isConnected || _printer == null)
+            {
+                StatusMessage = "❌ Error: Conéctate primero.";
+                return;
+            }
+
+            PrinterStatus status = _printer.IsConnected();
+            if (status != PrinterStatus.Normal)
+            {
+                StatusMessage = $"⚠️ Conexión perdida ({status}). Intentando reconectar...";
+                _isConnected = false;
+                ConnectEthernet();  // Intentar reconectar automáticamente
+                return;
+            }
+
+            status = _printer.CheckPrinterStatus();
+            if (status != PrinterStatus.Normal)
+            {
+                StatusMessage = $"⚠️ Impresora no lista ({status}). Intentando reconectar...";
+                _isConnected = false;
+                ConnectEthernet();
+                return;
+            }
+
+            status = _printer.TextConstructor(1, 12345);
+            _printer.CutPaper();
+            StatusMessage = $"✅ Impresión enviada. Estado: {status}";
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"❌ Error en impresión: {ex.Message}";
+        }
+    }
+
+    private void CloseConnection()
+    {
+        try
+        {
+            if (_printer == null)
+            {
+                StatusMessage = "⚠️ No hay conexión activa.";
+                return;
+            }
+
+            var status = _printer.CloseConnection();
+            _isConnected = false;
+            StatusMessage = $"✅ Conexión cerrada. Estado: {status}";
+        }
+        catch (Exception ex)
+        {
+            StatusMessage = $"❌ Error al cerrar conexión: {ex.Message}";
+        }
+    }
+}
